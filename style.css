@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+:root{
+    --text:'Radio Canada', sans-serif;
+    --expression-pad:3.5rem;
+}
+.container{
+    width:100vw;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#780206;
+    background-image:linear-gradient(315deg,#061161 0%,#a0070c 80%);
+}
+#calculator-body{
+    width:30vw;
+    height:90vh;
+    background-color: rgba(255,255,255,0.15);
+    border-radius: 30px;
+    backdrop-filter: blur(5px);
+    filter:drop-shadow(0,0,15px,0,rgba(0,0,0,.25));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.display{
+width:90%;
+height:25%;
+margin:10px 0;
+background-color: rgba(255,255,255,0.05);
+border:5px solid rgba(255,255,255,0.3);
+border-radius: 15px;
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+}
+#history{
+    margin:10px 10px 10px 10px;
+    color:rgba(255,255,255,0.7);
+    font-family: var(--text);
+    font-size: 25px;
+}
+#number{
+    margin:0 10px 10px 0;
+    color:white;
+    font-family: var(--text);
+    font-size: var(--expression-pad);
+    display: flex;
+    flex-wrap: wrap;
+}
+.numpad{
+    width:90%;
+    height:70%;
+    /* background-color:white; */
+    display: grid;
+    grid-template-areas: 
+    'all-clear sign percent clear'
+    'seven eight nine divide'
+    'four five six multiply-btn'
+    'one two three sub-btn'
+    'zero-btn decimal-btn ans add-btn'
+    ;
+}
+.btn{
+    width:5vw;
+    height:8vh;
+    margin:10px;
+    border-radius: 1.2rem;
+    border:none;
+    background-color: rgba(255,255,255,0.3);
+    /* box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.25),-4px -4px 4px 0 rgba(0,0,0,0.25); */
+    filter: drop-shadow(-4px 4px 2px rgba(0, 0, 0, 0.5));
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: rgba(255,255,255,0.6);
+}
+.btn-text{
+    font-size:30px;
+    color:white;
+    font-family: var(--text);
+    font-weight:bold;
+}
+#one{
+    grid-area: one;
+}
+#two{
+    grid-area: two;
+}
+#three{
+    grid-area: three;
+}
+#four{
+    grid-area: four;
+}
+#five{
+    grid-area: five;
+}
+#six{
+    grid-area: six;
+}
+#seven{
+    grid-area: seven;
+}
+#eight{
+    grid-area: eight;
+}
+#nine{
+    grid-area: nine;
+}
+#zero{
+    grid-area: zero-btn;
+}
+#decimal{
+    grid-area: decimal-btn;
+}
+#ans{
+    background-color:#FF9900;
+}
+#add{
+    grid-area: add-btn;
+}
+#sub{
+    grid-area: sub-btn;
+}
+#multiply{
+    grid-area: multiply-btn;
+}
+#divide{
+    grid-area: divide;
+}
+#clear{
+    grid-area: clear;
+}
+#percent{
+    grid-area: percent;
+}
+#sign{
+    grid-area: sign;
+}
+#all-clear{
+    grid-area: all-clear;
+}
+/* Media Queries */
+@media screen and (max-width: 1024px){
+    :root{
+        --expression-pad:2.38rem;
+    }
+    #calculator-body{
+        width:50vw;
+    }
+    .btn{
+        width:9vw;
+    }
+}
+@media screen and (max-width: 720px){
+    :root{
+        --expression-pad:2.38rem;
+    }
+    #calculator-body{
+        width:55vw;
+    }
+    .btn{
+        width:9vw;
+    }
+}
+@media screen and (max-width: 600px){
+    :root{
+        --expression-pad:2.38rem;
+    }
+    #calculator-body{
+        width:90vw;
+    }
+    .btn{
+        width:15vw;
+    }
+}
+@media screen and (max-width: 320px){
+    :root{
+        --expression-pad:2.2rem;
+    }
+    #calculator-body{
+        width:90vw;
+    }
+    .btn{
+        width:15vw;
+    }
+}
